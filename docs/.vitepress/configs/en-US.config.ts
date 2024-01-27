@@ -24,7 +24,8 @@ export const enUSConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
         sidebarMenuLabel: "Menu",
         sidebar: getEnUSSidebar(),
         socialLinks: [
-            { icon: "github", link: "https://github.com/vuejs/vitepress" },
+            // { icon: "github", link: "https://github.com/vuejs/vitepress" },
+            { icon: "github", link: "https://gitee.com/liu-dongju/vitepress-demo.git" },
         ],
     },
 };

@@ -15,7 +15,7 @@ export const getZhCNNav: () => DefaultTheme.NavItem[] = () => {
                     items: [
                         {
                             text: "CSS实战",
-                            link: "/zh-CN/applet-docs.md",
+                            link: "/zh-CN/app/apiclound.md",
                         },
                         {
                             text: "CSS文档",

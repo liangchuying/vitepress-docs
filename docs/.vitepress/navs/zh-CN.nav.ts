@@ -7,27 +7,27 @@ export const getZhCNNav: () => DefaultTheme.NavItem[] = () => {
             link: "/",
         },
         {
-            text: "前端",
+            text: "指南",
             items: [
                 {
                     icon: "reco-message",
                     text: "CSS",
                     items: [
                         {
-                            text: "CSS实战",
-                            link: "/zh-CN/applet-docs.md",
+                            text: "apiclound",
+                            link: "/zh-CN/app/apiclound.md",
                         },
                         {
-                            text: "CSS文档",
-                            link: "/zh-CN/backend-docs.md",
+                            text: "congshang",
+                            link: "/zh-CN/congshang/congshang.md",
                         },
                         {
-                            text: "CSS文档",
-                            link: "/zh-CN/front-end-docs.md",
+                            text: "js文档",
+                            link: "/zh-CN/javascript/shared.md",
                         },
                     ],
                 },
-                { icon: "reco-account", text: "关于", link: "/about/" },
+                // { icon: "reco-account", text: "关于", link: "/about/" },
             ],
         },
     ];

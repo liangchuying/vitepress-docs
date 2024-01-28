@@ -1,8 +1,7 @@
 import { enUSConfig, zhCNConfig } from "../configs";
 
 export const docsConfig = {
-    // base: "/Luid/",
-    base: "/",
+    base: "/vitepress-docs/",
     title: "梦和远方",
     description: "梦和远方的博客",
     lang: "zh-CN",

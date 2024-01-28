@@ -24,8 +24,7 @@ export const zhCNConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
         sidebarMenuLabel: "菜单",
         sidebar: getZhCNSidebar(),
         socialLinks: [
-            // { icon: "github", link: "https://github.com/vuejs/vitepress" },
-            { icon: "github", link: "https://gitee.com/liu-dongju/vitepress-demo.git" },
+            { icon: "github", link: "https://github.com/liangchuying/vitepress-docs.git" },
         ],
     },
 };

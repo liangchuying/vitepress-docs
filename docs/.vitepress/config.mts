@@ -9,5 +9,5 @@ export default defineConfig({
     head,
     /* 主题配置 */
     themeConfig,
-    outDir: "../dist"
+    // outDir: "../dist"
 });

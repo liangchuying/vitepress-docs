@@ -62,7 +62,7 @@ export const themeConfig: DefaultTheme.Config = {
     },
     // 社交链接
     socialLinks: [
-        { icon: "github", link: "https://github.com/vuejs/vitepress" },
+        { icon: "github", link: "https://github.com/liangchuying/vitepress-docs.git" },
     ],
 };
 

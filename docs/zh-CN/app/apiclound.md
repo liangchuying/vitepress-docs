@@ -100,4 +100,25 @@ weui.picker(dealstatusDatas, {
     },
     title: '请选择销售状态'
 });
+
+//团队选择
+ api.openWin({
+    name: 'publicHead',
+    url: '../basic/publicHead.html',
+    bounces: false,
+    delay: 0,
+    slidBackEnabled: false,
+    pageParam: {
+        config: {
+            title: "团队选择",
+            name: "searchPhoneBody",
+            url: "../myindex/searchPhoneBody.html"
+        },
+        data: {
+            frompage: 'businessteam',
+            stritem: stritem,
+            hideSearch: true
+        }
+    }
+});
 ```

@@ -9,8 +9,7 @@ export const themeConfig: DefaultTheme.Config = {
     // logo
     logo: "/vitepress-logo-mini.png",
     // logo: "https://vuejs.org/images/logo.png",
-    // 首页
-    // logoLink: "/",
+    logoLink: "/vitepress-docs/index",
     // i18n路由，false切换首页，true内容切换
     i18nRouting: true,
     // 搜索配置（二选一）
@@ -59,6 +58,10 @@ export const themeConfig: DefaultTheme.Config = {
                 },
             },
         },
+    },
+    editLink: { // 跳转编辑页面
+        pattern: "https://github.com/liangchuying/vitepress-docs.git",
+        text: "在 GitHub 上编辑此页面"
     },
     // 社交链接
     socialLinks: [

@@ -12,8 +12,8 @@ hero:
     alt: icenet
   actions:
     - theme: brand
-      text: 快来快来
-      link: /zh-CN/applet-docs/applet-docs
+      text: GO
+      link: /zh-CN/javascript/nodeOps.md
     - theme: alt
       text: API 案例
       link: /en-US/applet-docs/applet-docs

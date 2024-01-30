@@ -4,16 +4,16 @@
 layout: home
 
 hero:
-  name: 梦和远方
-  text: 梦和远方的博客
-  tagline: 简单介绍一下，主界面
+  name: Liud
+  text: Liud Blog
+  # tagline: 简单介绍一下，主界面
   image:
     src: /vitepress-logo-mini.png
     alt: icenet
   actions:
     - theme: brand
       text: GO
-      link: /zh-CN/javascript/nodeOps.md
+      link: /zh-CN/JavaScript/nodeOps.md
     - theme: alt
       text: API 案例
       link: /en-US/applet-docs/applet-docs
@@ -44,3 +44,4 @@ features:
     details: Lorem ipsum dolor sit amet
     link: /zh-CN/applet-docs/applet-docs
 ---
+

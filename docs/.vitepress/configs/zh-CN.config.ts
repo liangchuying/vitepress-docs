@@ -4,8 +4,8 @@ import { getZhCNSidebar } from "../sidebars";
 
 // https://vitepress.dev/reference/site-config
 export const zhCNConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
-    description: "梦和远方的博客",
-    title: "梦和远方",
+    description: "Liud的博客",
+    title: "Liud",
     lang: "zh-CN",
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config

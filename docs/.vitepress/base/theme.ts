@@ -4,7 +4,7 @@ export const themeConfig: DefaultTheme.Config = {
     // https://vitepress.dev/reference/default-theme-config
     footer: {
         message: "Released under the MIT License.",
-        copyright: "Copyright © 2023-present 梦和远方",
+        copyright: "Copyright © 2023-present Liud",
     },
     // logo
     logo: "/vitepress-logo-mini.png",

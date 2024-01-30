@@ -4,9 +4,9 @@
 layout: home
 
 hero:
-  name: 梦和远方
-  text: 梦和远方的博客
-  tagline: 简单介绍一下，主界面
+  name: Liud
+  text: Liud的博客
+  # tagline: 简单介绍一下，主界面
   image:
     src: /vitepress-logo-mini.png
     alt: icenet

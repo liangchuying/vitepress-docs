@@ -52,18 +52,18 @@ export const getZhCNSidebar: () => DefaultTheme.Sidebar = () => {
                 link: "/zh-CN/git_order/index.md",
             }
         ],
-        "/zh-CN/javascript/": [
+        "/zh-CN/JavaScript/": [
             {
                 text: "Common Function",
                 collapsed: true,
                 items: [
                     {
                         text: "Dom Controls",
-                        link: "/zh-CN/javascript/regularcheck.md",
+                        link: "/zh-CN/JavaScript/regularcheck.md",
                     },
                     {
                         text: "常用函数",
-                        link: "/zh-CN/javascript/shared.md",
+                        link: "/zh-CN/JavaScript/shared.md",
                     },
                 ],
             }
@@ -73,6 +73,13 @@ export const getZhCNSidebar: () => DefaultTheme.Sidebar = () => {
                 text: "Nginx 指令",
                 collapsed: true,
                 link: "/zh-CN/nginx/index.md",
+            }
+        ],
+        "/zh-CN/flutter/": [
+            {
+                text: "components",
+                collapsed: true,
+                link: "/zh-CN/flutter/components.md",
             }
         ],
     };

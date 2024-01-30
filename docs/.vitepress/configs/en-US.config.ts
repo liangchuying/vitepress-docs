@@ -4,8 +4,8 @@ import { getEnUSSidebar } from "../sidebars";
 
 // https://vitepress.dev/reference/site-config
 export const enUSConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
-    description: "梦和远方的博客",
-    title: "梦和远方",
+    description: "Liud的博客",
+    title: "Liud",
     lang: "en-US",
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config

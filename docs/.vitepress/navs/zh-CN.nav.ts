@@ -22,8 +22,8 @@ export const getZhCNNav: () => DefaultTheme.NavItem[] = () => {
                             link: "/zh-CN/congshang/congshang.md",
                         },
                         {
-                            text: "js文档",
-                            link: "/zh-CN/javascript/shared.md",
+                            text: "JavaScript basic",
+                            link: "/zh-CN/JavaScript/shared.md",
                         },
                     ],
                 },

@@ -2,45 +2,50 @@
 # 首页
 # https://vitepress.dev/reference/default-theme-home-page
 layout: home
-
 hero:
-  name: 梦和远方
-  text: 梦和远方的博客
-  tagline: 简单介绍一下，主界面
+  name: Liud
+  text: Liud Blog
+  # tagline: 简单介绍一下，主界面
   image:
     src: /vitepress-logo-mini.png
     alt: icenet
   actions:
     - theme: brand
       text: GO
-      link: /zh-CN/javascript/nodeOps.md
+      link: /zh-CN/JavaScript/nodeOps.md
     - theme: alt
       text: API 案例
       link: /en-US/applet-docs/applet-docs
 
 features:
   - icon: 💡
-    title: Feature A
-    details: Lorem ipsum dolor sit amet
-    link: /zh-CN/applet-docs/applet-docs
+    title: 前端知识
+    details: learn basic
+    link: /zh-CN/JavaScript/shared.md
+    linkText: '前往'
   - icon: ⚡️
     title: Feature B
     details: Lorem ipsum dolor sit amet
     link: /zh-CN/applet-docs/applet-docs
-  - icon: 🛠️
+    linkText: '前往'
+  - icon: ✈️
     title: Feature C
     details: Lorem ipsum dolor sit amet
     link: /zh-CN/applet-docs/applet-docs
+    linkText: '前往'
   - icon: 📦
     title: Feature A
     details: Lorem ipsum dolor sit amet
     link: /zh-CN/applet-docs/applet-docs
+    linkText: '前往'
   - icon: 🔩
     title: Feature B
     details: Lorem ipsum dolor sit amet
     link: /zh-CN/applet-docs/applet-docs
+    linkText: '前往'
   - icon: 🔑
     title: Feature C
     details: Lorem ipsum dolor sit amet
     link: /zh-CN/applet-docs/applet-docs
+    linkText: '前往'
 ---

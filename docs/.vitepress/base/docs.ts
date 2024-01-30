@@ -2,8 +2,8 @@ import { enUSConfig, zhCNConfig } from "../configs";
 
 export const docsConfig = {
     base: "/vitepress-docs/",
-    title: "梦和远方",
-    description: "梦和远方的博客",
+    title: "Liud",
+    description: "Liud的博客",
     lang: "zh-CN",
     // lastUpdated: true, // 显示最新更新时间
     /* 语言配置 */

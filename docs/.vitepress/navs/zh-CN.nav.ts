@@ -23,7 +23,7 @@ export const getZhCNNav: () => DefaultTheme.NavItem[] = () => {
                         },
                         {
                             text: "JavaScript basic",
-                            link: "/zh-CN/JavaScript/shared.md",
+                            link: "/zh-CN/javascript/shared.md",
                         },
                     ],
                 },

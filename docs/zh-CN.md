@@ -12,7 +12,7 @@ hero:
   actions:
     - theme: brand
       text: GO
-      link: /zh-CN/JavaScript/nodeOps.md
+      link: /zh-CN/javascript/nodeOps.md
     - theme: alt
       text: API 案例
       link: /en-US/applet-docs/applet-docs
@@ -21,7 +21,7 @@ features:
   - icon: 💡
     title: 前端知识
     details: learn basic
-    link: /zh-CN/JavaScript/shared.md
+    link: /zh-CN/javascript/shared.md
     linkText: '前往'
   - icon: ⚡️
     title: Feature B

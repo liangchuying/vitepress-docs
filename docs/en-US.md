@@ -13,7 +13,7 @@ hero:
   actions:
     - theme: brand
       text: GO
-      link: /zh-CN/JavaScript/nodeOps.md
+      link: /zh-CN/javascript/nodeOps.md
     - theme: alt
       text: API 案例
       link: /en-US/applet-docs/applet-docs

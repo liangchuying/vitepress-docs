@@ -22,7 +22,7 @@ features:
   - icon: 💡
     title: 前端知识
     details: learn basic
-    link: /zh-CN/JavaScript/shared.md
+    link: /zh-CN/javascript/shared.md
     linkText: '前往'
   - icon: ⚡️
     title: 工具

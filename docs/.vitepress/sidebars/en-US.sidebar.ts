@@ -32,18 +32,18 @@ export const getEnUSSidebar: () => DefaultTheme.Sidebar = () => {
                 link: "/zh-CN/git_order/index.md",
             }
         ],
-        "/zh-CN/JavaScript/": [
+        "/zh-CN/javascript/": [
             {
                 text: "Common Function",
                 collapsed: true,
                 items: [
                     {
                         text: "Dom Controls",
-                        link: "/zh-CN/JavaScript/regularcheck.md",
+                        link: "/zh-CN/javascript/regularcheck.md",
                     },
                     {
                         text: "常用函数",
-                        link: "/zh-CN/JavaScript/shared.md",
+                        link: "/zh-CN/javascript/shared.md",
                     },
                 ],
             }

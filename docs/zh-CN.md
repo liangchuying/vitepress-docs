@@ -24,11 +24,11 @@ features:
     link: /zh-CN/javascript/shared.md
     linkText: '前往'
   - icon: ⚡️
-    title: Feature B
-    details: Lorem ipsum dolor sit amet
-    link: /zh-CN/applet-docs/applet-docs
+    title: 工具
+    details: Common tool
+    link: /nav/
     linkText: '前往'
-  - icon: ✈️
+  - icon: 🛠️
     title: Feature C
     details: Lorem ipsum dolor sit amet
     link: /zh-CN/applet-docs/applet-docs

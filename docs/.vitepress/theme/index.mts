@@ -6,7 +6,7 @@ import { createMediumZoomProvider } from './composables/useMediumZoom'
 
 import MLayout from './components/MLayout.vue'
 import MNavLinks from './components/MNavLinks.vue'
-
+import MGiscus from './components/MGiscus.vue'
 import './styles/index.scss'
 
 let homePageStyle: HTMLStyleElement | undefined
@@ -23,7 +23,11 @@ export default {
       props.class = frontmatter.value.layoutClass
     }
 
-    return h(MLayout, props)
+    // return h(DefaultTheme.Layout, props, {
+    //   'doc-after': () => h(MGiscus),
+    // });
+
+    return h(MLayout, props,MGiscus)
   },
   enhanceApp({ app, router }: EnhanceAppContext) {
     createMediumZoomProvider(app, router)

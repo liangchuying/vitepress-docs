@@ -1,4 +1,4 @@
-<script setup lang="ts"> // 注册 MNavLinks 为全局组件
+<script setup lang="ts" name="MNavLink"> // 注册 MNavLinks 为全局组件
 import { computed } from 'vue'
 import { withBase } from 'vitepress'
 import { slugify } from '@mdit-vue/shared'

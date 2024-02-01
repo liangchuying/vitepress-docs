@@ -10,25 +10,16 @@ export const getEnUSNav: () => DefaultTheme.NavItem[] = () => {
             text: "前端",
             items: [
                 {
-                    text: "CSS",
-                    items: [
-                        {
-                            text: "CSS实战",
-                            link: "/en-US/applet-docs.md",
-                        },
-                        {
-                            text: "CSS文档",
-                            link: "/en-US/backend-docs.md",
-                        },
-                        {
-                            text: "CSS文档",
-                            link: "/en-US/front-end-docs.md",
-                        },
-                    ],
+                    text: "CSS实战",
+                    link: "/en-US/applet-docs.md",
                 },
                 {
-                    text: "关于",
-                    link: "/about/",
+                    text: "CSS文档",
+                    link: "/en-US/backend-docs.md",
+                },
+                {
+                    text: "CSS文档",
+                    link: "/en-US/front-end-docs.md",
                 },
             ],
         },

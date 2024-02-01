@@ -95,3 +95,7 @@ table {
 .dark::view-transition-old(root) {
   z-index: 9999;
 }
+
+.VPFeature {
+  background-color: unset !important;
+}

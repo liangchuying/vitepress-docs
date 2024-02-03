@@ -7,6 +7,16 @@ type NavData = {
 
 export const NAV_DATA: NavData[] = [
   {
+    title: '开发网址',
+    items: [
+      {
+        icon: 'https://caniuse.com/img/favicon-128.png',
+        title: 'YonBIP',
+        link: 'https://yonbip.yonyou.com',
+      },
+    ],
+  },
+  {
     title: '常用工具',
     items: [
       {

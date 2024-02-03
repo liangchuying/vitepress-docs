@@ -121,4 +121,30 @@ weui.picker(dealstatusDatas, {
         }
     }
 });
+
+ //方法配置
+let selconfig = {
+    seltypes: seltypes,
+    maxcount: maxcount,
+    // syscorpid: $api.getStorage('teamId'),
+    // cantchecklist: ''
+    foreignteam: '1',  // 是否显示外部团队
+};
+//已经选择的对象列表
+let checklist = {
+    orgs: [],
+    users: [],
+};
+// 显示通讯录，并回调
+showTeamManCB(selconfig, checklist, function (retData) {
+    console.log(toStr(retData))
+    if (retData.status) {
+        let allList = retData.checklist;
+        //处理各个输入框选择的人
+        if (enter == 'possessorName') {
+            $('#possessorName').val(allList.users[0].name);
+            possessor = allList.users[0].id;
+        }
+    }
+});
 ```

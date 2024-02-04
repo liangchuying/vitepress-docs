@@ -53,4 +53,38 @@ layer.open({
         layer.close(index);
     }
 });
+
+var modalInstance = $modal.open({
+      templateUrl: Url,//弹窗html路径
+      controllerAs: 'vm',
+      backdrop: 'static',//背景
+      scope: $scope,
+      windowClass: 'selContact',
+      controller: where,   //弹窗控制器名称
+      resolve: {//需要传递的值，在其控制器中trackingPaymentCtrl注入data以获取值
+          data: function () {
+              return {
+                  checklist: checklist,
+              };
+          }
+      }
+  });
+
+  modalInstance.result.then(function(result) {
+      console.log(result);
+  }, function(reason) {
+      if(reason.length){
+          reason.forEach(item=>{
+              if(typeof $scope.detNode == "number"){
+                  $scope.detailsList[$scope.detNode].remake.push(item)
+              }else{
+                  $scope.addRemake.push(item)
+              }
+
+          })
+      }
+      console.log(reason);// 点击空白区域，总会输出backdrop
+      // click，点击取消，则会暑促cancel
+      
+  });
 ```

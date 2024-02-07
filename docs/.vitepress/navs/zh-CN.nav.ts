@@ -14,11 +14,11 @@ export const getZhCNNav: () => DefaultTheme.NavItem[] = () => {
                     link: "/zh-CN/app/apiclound.md",
                 },
                 {
-                    text: "congshang",
+                    text: "从商",
                     link: "/zh-CN/congshang/congshang.md",
                 },
                 {
-                    text: "JavaScript basic",
+                    text: "JavaScript",
                     link: "/zh-CN/javascript/shared.md",
                 },
             ],

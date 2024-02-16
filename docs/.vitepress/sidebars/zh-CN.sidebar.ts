@@ -82,5 +82,19 @@ export const getZhCNSidebar: () => DefaultTheme.Sidebar = () => {
                 link: "/zh-CN/flutter/components.md",
             }
         ],
+        "/zh-CN/mysql/": [
+            {
+                text: "SQL",
+                collapsed: true,
+                link: "/zh-CN/mysql/index.md",
+            }
+        ],
+        "/zh-CN/Vue/": [
+            {
+                text: "vue",
+                collapsed: true,
+                link: "/zh-CN/Vue/vue.md",
+            }
+        ],
     };
 };

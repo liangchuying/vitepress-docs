@@ -1369,11 +1369,12 @@ task resolveDependencies {
 
 ### build.gradle
 ```dart
-buildscript {
+buildscript {//主要是为了Gradle脚本自身的执行，获取脚本依赖插件和库
     ext.kotlin_version = '1.7.10'
-    repositories {
+    repositories { //repositories闭包 声明了库 jcenter() 的配置；
         // google()
         // mavenCentral()
+        // jcenter()    //代码托管库：设置之后，如果需要的话，从https://jcenter.bintray.com/下载开源code reposities。
         maven {
             allowInsecureProtocol = true
             url 'https://maven.aliyun.com/repository/google'
@@ -1388,16 +1389,17 @@ buildscript {
         } 
     }
 
-    dependencies {
-        classpath 'com.android.tools.build:gradle:7.2.0'
+    dependencies { //dependencies闭包  声明了一个 Gradle 插件。
+        classpath 'com.android.tools.build:gradle:7.2.0'  //声明gradle插件，插件版本号为3.0.0
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
-allprojects {
+allprojects { // 该配置会被应用到所有的子工程
     repositories {
         // google()
         // mavenCentral()
+        // jcenter() //代码托管库：设置之后可以在项目中轻松引用jcenter上的开源项目
         maven {
             allowInsecureProtocol = true
             url 'https://maven.aliyun.com/repository/google'

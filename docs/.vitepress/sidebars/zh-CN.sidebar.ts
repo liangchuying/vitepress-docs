@@ -98,6 +98,10 @@ export const getZhCNSidebar: () => DefaultTheme.Sidebar = () => {
                         text: "install",
                         link: "/zh-CN/flutter/install.md",
                     },
+                    {
+                        text: "pubspec.yaml",
+                        link: "/zh-CN/flutter/pubspec.yaml.md",
+                    },
                 ],
             }
         ],

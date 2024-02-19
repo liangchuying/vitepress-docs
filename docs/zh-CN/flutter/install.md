@@ -1,6 +1,7 @@
 
 
 1、安装Flutter 
+
 1、1 添加用户环境变量
 
 ```
@@ -9,6 +10,7 @@ EFAULT_MAVEN_HOST=https://storage.flutter-io.cn;
 FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn;
 Path=D:\Flutter\path\flutter\bin;
 ```
+在终端界面执行 flutter doctor --android-licenses，这一个操作是安卓许可证授权 ，全部选yes就好
 
 ### flutter.gradle
 ``` dart

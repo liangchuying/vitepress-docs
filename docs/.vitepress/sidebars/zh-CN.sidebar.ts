@@ -77,9 +77,28 @@ export const getZhCNSidebar: () => DefaultTheme.Sidebar = () => {
         ],
         "/zh-CN/flutter/": [
             {
-                text: "components",
+                
+                text: "Flutter",
                 collapsed: true,
-                link: "/zh-CN/flutter/components.md",
+                
+                items: [
+                    {
+                        text: "components",
+                        link: "/zh-CN/flutter/components.md",
+                    },
+                    {
+                        text: "basic",
+                        link: "/zh-CN/flutter/basic.md",
+                    },
+                    {
+                        text: "build.gradle",
+                        link: "/zh-CN/flutter/build.gradle.md",
+                    },
+                    {
+                        text: "install",
+                        link: "/zh-CN/flutter/install.md",
+                    },
+                ],
             }
         ],
         "/zh-CN/mysql/": [

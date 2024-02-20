@@ -102,6 +102,10 @@ export const getZhCNSidebar: () => DefaultTheme.Sidebar = () => {
                         text: "pubspec.yaml",
                         link: "/zh-CN/flutter/pubspec.yaml.md",
                     },
+                    {
+                        text: "dart 语法",
+                        link: "/zh-CN/flutter/dart.md",
+                    },
                 ],
             }
         ],

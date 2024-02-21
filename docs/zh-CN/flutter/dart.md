@@ -1,4 +1,4 @@
-## Dart语法
+# Dart语法
 
 ```dart
 // ：注释
@@ -59,6 +59,7 @@ final包含了const的功能，区别在于：
 ```
 
 ### const
+
 在声明 const 变量时可以直接为其赋值，也可以使用其它的 const 变量为其赋值。
 
 ```dart
@@ -119,6 +120,7 @@ assert() 的调用将会在生产环境的代码中被忽略掉。在开发过�
   count = 0;
   print(count);
 ```
+
 顶级和类变量被懒惰地初始化：初始化代码在首次使用变量时运行。
 
 ### 数据类型
@@ -163,6 +165,7 @@ Dart 中每个变量引用都指向对象，通常也可以使用构造器来初
 ```
 
 #### 字符串转数字：parse
+
 ```dart
  String a = '123';
   String b = '123.23';
@@ -171,11 +174,13 @@ Dart 中每个变量引用都指向对象，通常也可以使用构造器来初
   double _b = double.parse(b);
   assert(_b == 123.23);
 ```
+
 建议都用 double.parse 转换成数字
 
 ### Strings
 
 字符串可以用单/双引号，在双引号中使用单引号可以不用转义，反过来也是一样。
+
 ```dart
 var s1 = '使用单引号创建字符串字面量。';
 var s2 = "双引号也可以用于创建字符串字面量。";
@@ -202,6 +207,7 @@ multi-line strings like this one.
 var s2 = """This is also a
 multi-line string.""";
 ```
+
 如果希望字符串中的内容不会被做任何处理（比如转义），则可以在字符串前面加上 r 来创建 raw 字符串。
 
 ```dart
@@ -301,12 +307,14 @@ print(newArr);
 ### Set
 
 dart 的 set 声明
+
 ```dart
   var halogens = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
   Set s = <String>{'fluorine', 'chlorine'};
 ```
 
-在{}前加上类型参数可以创建一个空的 Set，或者将{}赋值给一个 Set 类型的变量
+#### 在{}前加上类型参数可以创建一个空的 Set，或者将{}赋值给一个 Set 类型的变量
+
 ```dart
   var s = <String>{};
   Set _s = <String>{};
@@ -315,6 +323,7 @@ dart 的 set 声明
 ```
 
 * 使用add方法或者addAll方法可以添加项目
+
 ```dart
   var sets = <Object>{};
   sets.add('1');
@@ -323,12 +332,14 @@ dart 的 set 声明
 ```
 
 * 使用.length可以获取 Set 中元素的数量
+
 ```dart
     final sets = {'fluorine', 'chlorine'};
     print(sets.length);
 ```
 
 * Set 变量前添加const关键字创建 Set 编译时变量
+
 ```dart
 final constantSet = const {
   'fluorine',
@@ -337,10 +348,10 @@ final constantSet = const {
   'iodine',
   'astatine',
 };
-// constantSet.add('helium'); // This line will cause an error.
 ```
 
 * Set 可以使用扩展操作符和空感知操作符
+
 ```dart
   final sets = {'fluorine', 'chlorine'};
   var maybeNull;
@@ -349,9 +360,10 @@ final constantSet = const {
   print(a);
   print(b);
 ```
+
 ### Maps 类型
 
-Dart 中的 Maps 类型类似 JavaScript 中的 Map 数据结构，区别是需要强制在 key 上加引号。Maps 类型在 Dart 中当 object 用。
+#### Dart 中的 Maps 类型类似 JavaScript 中的 Map 数据结构，区别是需要强制在 key 上加引号。Maps 类型在 Dart 中当 object 用。
 
 声明 map，使用 var 能让 Map 自动推断，也可以手动写Map 的类型
 
@@ -419,6 +431,366 @@ final constantMap = const {
 ```
 
 ### 函数
+定义函数，建议定义返回类型
+
+```dart
+  String getName() {
+    return 'qiuyanxi';
+  }
+```
+
+只有一个表达式的函数能够使用箭头函数简化
+
+```dart
+  String getName() => 'qiuyanxi';
+```
+
+### 可选的位置参数
+
+```dart
+ void printThings([String? str, String str2 = 'default value']) {
+    assert(str == null);
+    assert(str2 == 'default value');
+  }
+  printThings();
+```
+
+### 命名参数
+
+命名参数默认都为可选参数。如果是必要参数，则需要用required
+
+定义函数时，使用{参数 1，参数 2}来指定命名参数
+
+
+```dart
+String getName2({required String name, int? age = 10}) => '$name$age';
+```
+
+调用函数时，使用 参数名:参数值指定命名参数
+
+```dart
+getName2(name: 'qiuyanxi');
+```
+
+### 默认参数
+
+如果一个参数是可选的但是不能是 null，那么需要提供一个默认的值。没有默认值的情况下参数是 null
+
+```dart
+/// Sets the [bold] and [hidden] flags ...
+void enableFlags({bool bold = false, bool hidden = false}) {...}
+
+// bold will be true; hidden will be false.
+enableFlags(bold: true);
+```
+
+### 默认值
+
+只有可选参数才有默认值，默认值必须为 编译时常量，如以下的参数为默认的 List 和 Map，为了变成编译时常量，需要加上 const 关键字
+
+```dart
+  void getList([List<int> list = const [1, 2, 3]]) {}
+  void getMap([Map<String, String> map = const {"name": "qiuyanxi"}]) {}
+```
+
+### main函数
+main 函数是每个 Dart 程序必须有的顶级函数，是程序的入口，main 函数返回值是void ，并且有一个List`<String>`类型的可选参数。
+
+可以通过命令行给 main 函数传递参数
+
+#### hello-world.dart
+
+```dart
+void main(List<String> args) {
+  // 在命令行运行以下命令: dart hello-world.dart 1 test
+  print(args); //['1', 'test']
+  assert(args.length == 2);
+  assert(int.parse(args[0]) == 1);
+  assert(args[1] == 'test');
+}
+```
+
+### 匿名函数
+
+匿名函数被当做参数使用
+
+```dart
+const list = ['apples', 'bananas', 'oranges'];
+list.forEach((item) {
+  print('${list.indexOf(item)}: $item');
+});
+```
+
+#### 使用匿名箭头函数当做参数使用
+
+```dart
+const list = ['apples', 'bananas', 'oranges'];
+list.forEach((item) => print('${list.indexOf(item)}: $item'));
+```
+
+### 词法作用域
+
+Dart 的作用域是词法作用域，跟 JavaScript 一样，在写代码的时候就确定了。
+
+### 运算符
+
+#### 赋值运算符
+
+```dart
+  var a = 1;
+  int? b;
+  b ??= 2; // 如果 b 为空的话就把 2 赋值给 b
+  a += 0; // a=a+0
+```
+### 算数运算符
+
+```dart
+  print(a + b);
+  print(a - b);
+  print(a * b);
+  print(a / b);
+  print(a % b); // 取余
+  print(a ~/ b); // 取整
+	a ++ // 先运算再自增
+  a -- //先运算再自减
+  -- a // 先自减再运算
+  ++ a // 先自增再运算
+```
+
+### 关系运算符
+
+```dart
+print(a == b);
+print(a >= b);
+print(a <= b);
+print(a != b);
+identical(DateTime.now(), DateTime.now()); // 判断两个对象是否相等
+```
+
+### 类型判断运算符
+
+| Operator | Meaning |
+| ------------- | :-----------: |
+| as | 类型转换（也用作指定 类前缀） | 
+| is | 如果对象是指定类型则返回 true |
+| is!| 如果对象是指定类型则返回 false |
+
+### 逻辑运算符
+
+| 运算符 | 描述 |
+| ------------- | :-----------: |
+| !*表达式* | 对表达式结果取反（即将 true 变为 false，false 变为 true） | 
+| && | 逻辑与 |
+
+```dart
+  var c = false;
+  var d = true;
+  /* 取反 */
+  if (!c) {
+    print(c);
+  }
+  /* && 并且 */
+  if (c && d) {}
+  /* || 或 */
+  if (c || d) {}
+```
+
+### 表达式
+
+#### 表达式 1 ?? 表达式 2
+
+如果表达式1 为 null 则返回表达式 2
+
+```dart
+  /* ??运算符 */
+  var i;
+  var j = i ?? 10; // i 为空则将 10 赋值给 j，同 js 空值合并运算符
+  print(j);
+```
+
+#### 条件 ? 表达式 1 : 表达式 2
+
+```dart
+  /* 三目运算符 */
+  var flag;
+  flag = true;
+  var f = flag ? 'true' : 'false';
+```
+
+### 级联运算符
+
+级联运算符 (.., ?..) 可以让你在同一个对象上连续调用多个对象的变量或方法。
+
+```dart
+
+var paint = Paint()
+  ..color = Colors.black
+  ..strokeCap = StrokeCap.round
+  ..strokeWidth = 5.0;
+
+/* 相当于  */
+var paint = Paint();
+paint.color = Colors.black;
+paint.strokeCap = StrokeCap.round;
+paint.strokeWidth = 5.0;
+
+querySelector('#confirm') // Get an object.
+  ?..text = 'Confirm' // Use its members.
+  ..classes.add('important')
+  ..onClick.listen((e) => window.alert('Confirmed!'));
+
+/* 相当于  */
+var button = querySelector('#confirm');
+button?.text = 'Confirm';
+button?.classes.add('important');
+button?.onClick.listen((e) => window.alert('Confirmed!'));
+```
+
+### 其他运算符
+
+| 运算符 | 名字 | 描述 |
+| ------------- | :-----------: | :-----------: | 
+| () | 使用方法 | 代表调用一个方法 |
+| [] | 访问 List | 访问 List 中特定位置的元素 |
+| ?[] | 判空访问 List | 左侧调用者不为空时，访问 List 中特定位置的元素 |
+| . | 	访问成员 | 成员访问符 |
+| ?. | 条件访问成员 | 与上述成员访问符类似，但是左边的操作对象不能为 null，例如 foo?.bar，如果 foo 为 null 则返回 null ，否则返回 bar |
+
+### 判空
+
+* 判断字符串是否为空
+``` dart
+  var str = '';
+  if (str.isEmpty) {
+    print(' 判断为空字符串');
+  }
+```
+
+* 判断是否为 null
+``` dart
+  var _null = null;
+  if (_null == null) {
+    print('判断为 null');
+  }
+```
+
+* 判断是否为 NaN
+``` dart
+  var _nan = 0 / 0;
+  if (_nan.isNaN) {
+    print('是 NaN');
+  }
+```
+
+### 空安全
+
+Dart 目前支持控安全机制，也就是说除非我们声明它可空，否则它们的值不能为空，这样做的好处是提高了代码的健壮性，在编译的时候就能报错。
+
+::: info 
+空安全需要 dart 在 2.12 以上
+:::
+
+声明可空的方式就是在类型前面加个问号：
+
+```dart
+  int? count;
+  count = null;
+```
+
+如果没有加问号，那么这个值就不能是空的
+
+``` dart
+  int count;
+  // ❌ A value of type 'Null' can't be assigned to a variable of type 'int'.
+  count = null;
+```
+
+如果我们知道一个值不可能为空，但是 Dart 判断可能为空，那就用!表示非空断言
+
+``` dart
+  String? getData(String? data) {
+    if (data is String) {
+      return 'this is string data';
+    }
+    return null;
+  }
+
+-  String a = getData('12131');
++  String a = getData('12131')!;
+```
+
+### 流程控制语句
+
+* for 循环
+``` dart
+  for (var i = 0; i < 10; i++) {
+    print(i);
+  }
+```
+
+JavaScript 的 var 在 for 循环中只有一个作用域，dart 的 var 不存在这个问题，所以上面的代码能够正常打出 i的值。
+
+* for...in 循环
+
+使用 for..in 遍历可迭代对象，比如 Lists 类型和 Set 类型
+
+``` dart
+  var list = [1, 2, 3];
+  var sets = <int>{1, 2, 3};
+  for (var value in list) {
+    print(value);
+  }
+  for (var value in sets) {
+    print(value);
+  }
+```
+
+可迭代对象也可以使用forEach方法循环
+
+``` dart 
+var collection = [1, 2, 3];
+collection.forEach(print); // 1 2 3
+```
+
+* while 循环
+
+``` dart 
+  var i = 10;
+  while (i > 0) {
+    print(i);
+    i--;
+  }
+```
+
+* do while 循环
+
+``` dart 
+  var i = 0;
+  do {
+    print(i); //这段代码执行了
+    i--;
+  } while (i > 0);
+
+  while (i > 0) {
+    print(i);// 永远不会执行
+    i--;
+  }
+```
+
+* break，continue 语句
+  break 跳出循环，continue 跳过本轮循环
+
+* switch和 case
+
+* 断言——assert
+
+``` dart
+  assert(1 < 2);
+  assert(1 > 2, '1>2 is wrong');
+```
+
+### 异常捕获
+
 
 ### 异步
 
@@ -432,6 +804,7 @@ Future<void> checkVersion() async {
   // Do something with version
 }
 ```
+
 上面的代码会等到lookUpVersion处理完成，再执行下一步操作。
 
 ::: info
@@ -440,6 +813,7 @@ await 表达式的返回值通常是一个 Future 对象；如果不是的话也
 
 #### async关键字
 跟 JavaScript 的规则差不多，单单使用async只能生成 Future 对象，并不会让代码变成异步的。举个🌰
+
 ```dart
     Future<void> checkVersion() async {
         print(123);
@@ -480,9 +854,9 @@ try {
 
 ### Typedefs
 
-typedefs 是类型别名，是一种引用某一类型的简便方法，常用于封装类型，它使用 typedef 关键字。
+#### typedefs 是类型别名，是一种引用某一类型的简便方法，常用于封装类型，它使用 typedef 关键字。
 
-比如项目中有一个类型是数字类型的 List，我们将它封装起来变成一个类型别名,就可以直接使用
+#### 比如项目中有一个类型是数字类型的 List，我们将它封装起来变成一个类型别名,就可以直接使用
 
 ```dart
 typedef IntList = List<int>;
@@ -490,7 +864,7 @@ typedef IntList = List<int>;
 IntList a = [1, 2, 3];
 ```
 
-当传参是函数并且需要明确的类型定义时，使用类型别名可以简化代码
+#### 当传参是函数并且需要明确的类型定义时，使用类型别名可以简化代码
 
 ```dart
   void PrintString(String getS(String str)) {
@@ -498,7 +872,7 @@ IntList a = [1, 2, 3];
   }
 ```
 
-上面的PrintString函数需要传入一个返回值和参数都为 String 的函数，使用typedef简化代码：
+#### 上面的PrintString函数需要传入一个返回值和参数都为 String 的函数，使用typedef简化代码：
 
 ```dart
     typedef GetString = String Function(String str);

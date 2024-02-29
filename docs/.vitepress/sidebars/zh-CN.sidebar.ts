@@ -106,6 +106,10 @@ export const getZhCNSidebar: () => DefaultTheme.Sidebar = () => {
                         text: "dart 语法",
                         link: "/zh-CN/flutter/dart.md",
                     },
+                    {
+                        text: "Getx 插件使用",
+                        link: "/zh-CN/flutter/dart.md",
+                    },
                 ],
             }
         ],

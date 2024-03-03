@@ -83,23 +83,23 @@ export const getZhCNSidebar: () => DefaultTheme.Sidebar = () => {
                 
                 items: [
                     {
-                        text: "components",
-                        link: "/zh-CN/flutter/components.md",
-                    },
-                    {
-                        text: "basic",
-                        link: "/zh-CN/flutter/basic.md",
-                    },
-                    {
-                        text: "build.gradle",
-                        link: "/zh-CN/flutter/build.gradle.md",
-                    },
-                    {
-                        text: "install",
+                        text: "下载安装",
                         link: "/zh-CN/flutter/install.md",
                     },
                     {
-                        text: "pubspec.yaml",
+                        text: "自定义widget",
+                        link: "/zh-CN/flutter/widget.md",
+                    },
+                    {
+                        text: "常用指令",
+                        link: "/zh-CN/flutter/basic.md",
+                    },
+                    {
+                        text: "build.gradle 配置",
+                        link: "/zh-CN/flutter/build.gradle.md",
+                    },
+                    {
+                        text: "pubspec.yaml 配置",
                         link: "/zh-CN/flutter/pubspec.yaml.md",
                     },
                     {
@@ -108,7 +108,11 @@ export const getZhCNSidebar: () => DefaultTheme.Sidebar = () => {
                     },
                     {
                         text: "Getx 插件使用",
-                        link: "/zh-CN/flutter/dart.md",
+                        link: "/zh-CN/flutter/Getx/index.md",
+                    },
+                    {
+                        text: "其他",
+                        link: "/zh-CN/flutter/other.md",
                     },
                 ],
             }

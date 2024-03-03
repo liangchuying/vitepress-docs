@@ -283,7 +283,6 @@ Vue3和Vue2的生命周期对比
     })
 </script>
 ```
-```
 
 # ref操作组件-defineExpose
 

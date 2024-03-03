@@ -143,8 +143,9 @@ Get.snackbar(
 );
 ```
 属性以及说明: 
-| ---------- | ---------- |
+
 | 字段 | 属性 | 描述 |
+| ---------- | ---------- | ---------- |
 |  title | String | 弹出的标题文字 |
 |  message| String | 弹出的消息文字 |
 |  colorText | Color | title和message的文字颜色|
@@ -182,7 +183,6 @@ Get.snackbar(
 |  snackbarStatus | SnackbarStatusCallback| Snackbar弹出或消失时的事件回调（即将打开、已打开、即将关闭、已关闭）|
 |  overlayColor | Color | 弹出时的毛玻璃的背景颜色 |
 |  userInputForm | Form | 用户输入表单 |
-| ---------- | ---------- |
 
 * Dialog
 
@@ -210,8 +210,9 @@ ElevatedButton(
 
 ```
 属性以及说明
-| ---------- | ---------- | ---------- |
+
 |	字段|	属性 |	描述 |
+| ---------- | ---------- | ---------- |
 | title|	String |	弹出的标题，默认（Alert） |
 | titlePadding |	EdgeInsetsGeometry |	标题的内边距，默认（EdgeInsets.all(8)）|
 | titleStyle |	TextStyle |	标题的样式 |
@@ -237,7 +238,6 @@ ElevatedButton(
 | actions |	List |	增加额外的子组件 |
 | onWillPop |	WillPopCallback |	拦截关闭之前做一些操作 |
 | navigatorKey |	GlobalKey |	用于打开对话框的key |
-| ---------- | ---------- | ---------- |
                         
 原文链接：https://blog.csdn.net/eastWind1101/article/details/127996254
 * BottomSheets

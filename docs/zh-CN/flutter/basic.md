@@ -28,3 +28,21 @@ flutter version 查看flutter版本 加上版本名称 则进行切换
 	7) p 切换模式 Widget会有线条作基准 方便布局
 	8) q 退出程序以及终端
 ```
+
+##### android 常用快捷键
+
+*	Option + Enter ：在widget包裹一个新的widget。
+*	Option + Up ：选择这个widget。
+*	Option + Enter ：自动修正错误（但是要把光标移动到错误上面）。
+*	Command + “-” 或者 “+” ：收起和展开代码。
+*	Command + Shift + “-” 或者 “+” ： 收起和展开全部代码。
+*	Option + Command + M ：方法抽离或重构。
+*	Command + Shift + Enter ：代码快速补全。
+*	Option + Command + V ： 抽离局部变量。
+*	Option + Command + F ：抽离成员变量。
+*	Command + Option + L ： 代码格式化。
+*	Command + F12 ：快速查看当前文件所有方法。
+*	Command + shift + F ：全局搜索。
+*	Command + shift + R ：全局替换。
+*	Command + F ：当前文件搜索。
+*	Command + R ：当前文件替换。

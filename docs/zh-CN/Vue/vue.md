@@ -265,7 +265,7 @@ Vue3和Vue2的生命周期对比
 
 ```js
 <template>
-	<!-- 2. 绑定到标签ref属性上,注意：名字要和script定义的保持一致 -->
+	// <!-- 2. 绑定到标签ref属性上,注意：名字要和script定义的保持一致 -->
    <input type="text" ref="inputRef" />
 </template>
 
@@ -282,6 +282,7 @@ Vue3和Vue2的生命周期对比
         focusHandle()
     })
 </script>
+```
 ```
 
 # ref操作组件-defineExpose

@@ -144,3 +144,56 @@ class _childState extends State<child> {
 }
 
 ```
+
+#### 关于part、library和part of
+
+``` dart
+//  定义库的名字
+library global;
+
+//  文件中引用的公共包
+import 'dart:convert';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:i_chat/tools/utils.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import './tools/network.dart';
+import 'package:dio/dio.dart';
+import 'dart:math';
+import 'package:provider/provider.dart';
+import 'package:socket_io_client/socket_io_client.dart' as IO;
+
+//  组成这个库的其他文件
+part './model/User.dart';
+part './model/FriendInfo.dart';
+part './model/Message.dart';
+
+//  ...其他业务代码
+```
+
+在文件的开头使用`library`标识符定义库的名字，这也是其他子文件与其耦合起来的关键，`part`标识符指明组成这个库的其他文件。需要注意的是，`part`部分一定要在`import`部分的后面。
+子文件的组织方式如下，以`./model/FriendInfo.dart`为例：
+
+``` dart
+
+//  指明与其关联的父库
+part of global;
+
+//  定义其他内容
+class FriendInfo {
+    ...
+}
+```
+
+::: info 总结
+:::
+
+* import 'dart:xxx'; 引入Dart标准库
+* import 'xxx/xxx.dart';引入绝对路径的Dart文件
+* import 'package:xxx/xxx.dart'; 引入Pub仓库pub.dev(或者pub.flutter-io.cn)中的第三方库
+* import 'package:project/xxx/xxx.dart';引入自定义的dart文件
+* import 'xxx' show compute1，compute2 只导入compute1，compute2
+* import 'xxx' hide compute3 除了compute都引入
+* import 'xxx' as compute4 将库重命名，当有名字冲突时
+* library compute5; 定义库名称
+* part of compute6; 表示文件属于某个库

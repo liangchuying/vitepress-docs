@@ -8,6 +8,7 @@
 #### TabBar 的使用
 
 |   字段      | 属性        |    描述  |
+| ----------- | ---------- | ---------- |
 | controller | 	TabController | 控制tab的控制器 |
 | isScrollable | bool | 是否可滚动 |
 | indicatorColor | Color | 指示器颜色 |

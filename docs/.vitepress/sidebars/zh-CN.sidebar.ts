@@ -82,9 +82,14 @@ export const getZhCNSidebar: () => DefaultTheme.Sidebar = () => {
                 collapsed: true,
                 
                 items: [
+
                     {
                         text: "下载安装",
                         link: "/zh-CN/flutter/install.md",
+                    },
+                    {
+                        text: "开始",
+                        link: "/zh-CN/flutter/start.md",
                     },
                     {
                         text: "自定义widget",

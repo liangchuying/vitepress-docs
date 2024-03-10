@@ -88,3 +88,61 @@ var modalInstance = $modal.open({
       
   });
 ```
+
+
+#### layui 时间组件
+
+```html
+
+<form class="layui-form" action="" lay-filter="accountForm" style="margin-top: 10px">
+    <div class="layui-form-item">
+        <label class="layui-form-label"><span style="color: red;font-size: 14px;">*</span>XXXXXXX</label>
+        <div class="layui-input-block">
+            <select name="setid" ng-model="setid" lay-filter="selectSetid">
+                <option value="1">男</option>
+            </select>
+        </div>
+    </div>
+</form>
+
+```
+
+``` js
+let laydate;
+layui.use(['layer','laydate','form'], function (layer) {
+    form = layui.form;
+    form.render();
+    console.log('layui初始化成功');
+    laydate = layui.laydate;
+
+    form.on('select(selectSetid)', function(data){
+        console.log(data)
+        $scope.setid = data.value;
+    });
+})
+
+        
+laydate.render({
+    elem: '#' + id, // 挂载dom
+    type: "date", // 格式化
+    trigger: 'click',
+    done: function (value, date) { //监听日期被切换
+        if (id == 'time_1') {
+            $scope.time_1data = value
+        }
+        if (id == 'time_2') {
+            $scope.time_2data = value
+        }
+        if (id == 'time_3') {
+            $scope.time_3data = value
+        }
+        if (id == 'time_4') {
+            $scope.time_4data = value
+        }
+        if (id == 'time_5') {
+            $scope.time_5data = value
+        }
+
+    }
+});
+```

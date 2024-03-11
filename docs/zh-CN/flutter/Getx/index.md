@@ -52,28 +52,27 @@ class BindingMyController extends GetxController {
 
 ``` dart
  GetMaterialApp(
-      initialRoute: '/',
-      getPages: [
-      GetPage(
-        name: '/',
-        page: () => MyHomePage(),
-      ),
-      GetPage(
-        name: '/profile/', // 没值匹配就写 / 在后面
-        page: () => MyProfile(),
-      ),
-      GetPage(
-        name: '/profile/:user', // 如果有值 /:xxx 在后面
-        page: () => UserProfile(),
-      ),
-      GetPage(
-        name: '/third',
-        page: () => Third(),
-        transition: Transition.cupertino  
-      ),
-     ],
-    )
-  );
+    initialRoute: '/',
+    getPages: [
+    GetPage(
+      name: '/',
+      page: () => MyHomePage(),
+    ),
+    GetPage(
+      name: '/profile/', // 没值匹配就写 / 在后面
+      page: () => MyProfile(),
+    ),
+    GetPage(
+      name: '/profile/:user', // 如果有值 /:xxx 在后面
+      page: () => UserProfile(),
+    ),
+    GetPage(
+      name: '/third',
+      page: () => Third(),
+      transition: Transition.cupertino  
+    ),
+    ],
+  )
 ```
 
 #### Get 中间件

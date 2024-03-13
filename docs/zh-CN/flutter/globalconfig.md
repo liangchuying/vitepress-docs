@@ -1,8 +1,9 @@
 #### `全局的国际化配置`
 
 ```dart
-flutter_localizations 插件
-import 'package:flutter_localizations/flutter_localizations.dart';
+两个插件配合使用
+flutter pub add flutter_localizations --sdk=flutter // 需要根据sdk 版本去安装
+ flutter pub add intl:any
 
 localizationsDelegates: [
     GlobalMaterialLocalizations.delegate, // 指定本地化的字符串和一些其他的值

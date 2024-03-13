@@ -69,7 +69,35 @@ function Nonempty(v){
         }
         return true;
 }
+```
 
+``` js
+// 输入正整数
+function inputNumber (e) {
+  let price = e.value;
+  price = price.replace(/[^\d]/g, "");  //清除“数字”和“.”以外的字符
+  if (price.indexOf(".") < 0 && price != "") {//以上已经过滤，此处控制的是如果没有小数点，首位不能为类似于 01、02的金额
+      price = parseFloat(price);
+  }
+  e.value = price
+}
+
+```
+
+```js
+  // 后两位小数点过滤
+  function handleInput(e) {
+      // console.log(e)
+      let price = e.value;
+      price = price.replace(/[^\d.]/g, "");  //清除“数字”和“.”以外的字符
+      price = price.replace(/\.{2,}/g, "."); //只保留第一个. 清除多余的
+      price = price.replace(".", "$#$").replace(/\./g, "").replace("$#$", ".");
+      price = price.replace(/^(\-)*(\d+)\.(\d\d).*$/, '$1$2.$3');//只能输入两个小数
+      if (price.indexOf(".") < 0 && price != "") {//以上已经过滤，此处控制的是如果没有小数点，首位不能为类似于 01、02的金额
+          price = parseFloat(price);
+      }
+      e.value = price
+  }
 ```
 
 🏠 :house:

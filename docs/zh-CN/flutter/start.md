@@ -1,5 +1,5 @@
 
-在`Flutter`中，widget分为两类：Stateful（有状态）和 stateless（无状态）widget。
+#### 在`Flutter`中，widget分为两类：Stateful（有状态）和 stateless（无状态）widget。
 
 stateless widget 没有内部状态，Icon、IconButton, 和Text都是无状态widget, 它们都是 StatelessWidget的子类。
 
@@ -90,3 +90,4 @@ class _FavoriteWidgetState extends State<FavoriteWidget> {
 }
 
 ```
+

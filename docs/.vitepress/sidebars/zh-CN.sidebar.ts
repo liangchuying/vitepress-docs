@@ -45,11 +45,11 @@ export const getZhCNSidebar: () => DefaultTheme.Sidebar = () => {
                 ],
             }
         ],
-        "/zh-CN/git_order/": [
+        "/zh-CN/Git/": [
             {
                 text: "git 指令",
                 collapsed: true,
-                link: "/zh-CN/git_order/index.md",
+                link: "/zh-CN/Git/index.md",
             }
         ],
         "/zh-CN/javascript/": [

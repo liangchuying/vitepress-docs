@@ -4,7 +4,7 @@
 
 |   字段      |     属性      |   描述    |
 | ---------- | --------- | ---------- |
-|onTapDown  | ----------  | 按下时回调  |
+|  onTapDown  | ----------  | 按下时回调  |
 |  onTapUp  | ----------  | 抬起时回调  |
 |  onTap  | ----------  | 点击事件回调  |
 |  onTapCancel | ----------  | 点击取消事件回调  |
@@ -168,5 +168,54 @@ onPanUpdate:(detail){
       drawerDragStartBehavior: DragStartBehavior.start, //?
     );
   }
+
+```
+
+#### CupertinoDatePicker 
+
+```dart
+
+late DateTime dateTimer;
+Text("查看选择的时间: ${dateTimer}")
+// widget
+CupertinoDatePicker(
+  backgroundColor: Colors.indigo, //背景颜色
+  use24hFormat: true, //使用24小时制
+
+  initialDateTime: DateTime.now(), // 默认时间
+  //日期的限制
+  maximumYear: 2025,
+  minimumYear: 2021,
+  minimumDate: DateTime.now()
+      .add(const Duration(days: -1)), //最小数值date
+  maximumDate: DateTime.now()
+      .add(const Duration(days: 3)), //3天后的日期
+  onDateTimeChanged: (sd) {
+    print(sd);
+    setState(() {
+      dateTimer = sd;
+    });
+  }
+);
+
+```
+
+
+#### CupertinoTimerPicker
+```dart
+
+CupertinoTimerPicker(
+  mode: CupertinoTimerPickerMode.hms, //模式可以值选择时和分，或者加秒
+  minuteInterval: 1, //最小的分钟间隔
+  //设置默认的时间，路由自己设置或者是可以设置为当前数据的时分秒
+  initialTimerDuration:
+      Duration(hours: 2, minutes: 10, seconds: 54),
+  onTimerDurationChanged: (stime) {
+    print("$stime");
+    setState(() {
+      selectTimeStr2 = "$stime";
+    });
+  },
+);
 
 ```

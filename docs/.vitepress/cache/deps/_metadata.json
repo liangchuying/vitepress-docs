@@ -1,61 +1,61 @@
 {
-  "hash": "b6a1b42f",
-  "configHash": "f2c68bda",
+  "hash": "efb36dc3",
+  "configHash": "200aa67a",
   "lockfileHash": "bec98d62",
-  "browserHash": "f10ffc42",
+  "browserHash": "78f9c76a",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "8a7170f3",
+      "fileHash": "cc120ae1",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/@vue/devtools-api/lib/esm/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "ef1e3334",
+      "fileHash": "1e8b3026",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "511bb071",
+      "fileHash": "ba59d4a7",
       "needsInterop": false
     },
     "vitepress > @vueuse/integrations/useFocusTrap": {
       "src": "../../../../node_modules/@vueuse/integrations/useFocusTrap.mjs",
       "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
-      "fileHash": "c2596e1b",
+      "fileHash": "c9e7e0e3",
       "needsInterop": false
     },
     "vitepress > mark.js/src/vanilla.js": {
       "src": "../../../../node_modules/mark.js/src/vanilla.js",
       "file": "vitepress___mark__js_src_vanilla__js.js",
-      "fileHash": "ecead20b",
+      "fileHash": "692be56d",
       "needsInterop": false
     },
     "vitepress > minisearch": {
       "src": "../../../../node_modules/minisearch/dist/es/index.js",
       "file": "vitepress___minisearch.js",
-      "fileHash": "580fb7a4",
-      "needsInterop": false
-    },
-    "medium-zoom": {
-      "src": "../../../../node_modules/medium-zoom/dist/medium-zoom.esm.js",
-      "file": "medium-zoom.js",
-      "fileHash": "f3bbfb42",
+      "fileHash": "fb65c29e",
       "needsInterop": false
     },
     "@mdit-vue/shared": {
       "src": "../../../../node_modules/@mdit-vue/shared/dist/index.mjs",
       "file": "@mdit-vue_shared.js",
-      "fileHash": "c5c22f72",
+      "fileHash": "16adcb62",
+      "needsInterop": false
+    },
+    "medium-zoom": {
+      "src": "../../../../node_modules/medium-zoom/dist/medium-zoom.esm.js",
+      "file": "medium-zoom.js",
+      "fileHash": "96bcb98d",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-MNXRYDUQ": {
-      "file": "chunk-MNXRYDUQ.js"
+    "chunk-WFT6MZEP": {
+      "file": "chunk-WFT6MZEP.js"
     },
     "chunk-3YS4HNIT": {
       "file": "chunk-3YS4HNIT.js"

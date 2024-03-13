@@ -1,6 +1,7 @@
 常用的widget
 
 * GestureDetector 手势
+
 |   字段      |     属性      |   描述    |
 | ---------- | --------- | ---------- |
 |onTapDown  | ----------  | 按下时回调  |
@@ -12,29 +13,29 @@
 |  onDoubleTapCancel | ----------  | 短时间内双击取消事件回调  |
 |  onLongPress | ----------  | 长按事件回调  |
 |  onLongPressStart | ----------  | 长按开始事件回调  |
-|  onLongPressMoveUpdate  | ----------  |长按移动事件回调  |
+|  onLongPressMoveUpdate  | ----------  | 长按移动事件回调  |
 |  onLongPressUp | ----------  | 长按抬起事件回调  |
-|  onLongPressEnd  | ----------  |长按结束事件回调  |
+|  onLongPressEnd  | ----------  | 长按结束事件回调  |
 |  onVerticalDragDown | ----------  | 垂直滑动按下事件回调  |
 |  onVerticalDragStart | ----------  | 垂直滑动开始事件回调  |
 |  onVerticalDragUpdate | ----------  | 垂直滑动更新事件回调  |
-|  onVerticalDragEnd  | ----------  |垂直滑动结束事件回调  |
-|  onVerticalDragCancel  | ----------  |垂直滑动取消事件回调  |
-|  onHorizontalDragDown  | ----------  |水平滑动按下事件回调  |
-|  onHorizontalDragStart  | ----------  |水平滑动开始事件回调  |
-|  onHorizontalDragUpdate  | ----------  |水平滑动更新事件回调  |
-|  onHorizontalDragEnd  | ----------  |水平滑动结束事件回调  |
-|  onHorizontalDragCancel  | ----------  |水平滑动取消事件回调  |
-|  onPanDown  | ----------  |按压时回调（我自己理解为点击事件，但是比onTap优先级高，onPan先执行先取消,onPan比onTap多个滑动监听）  |
-|  onPanStart  | ----------  |按压拖动开始回调,按压开始，不能与 onScale ，onVerticalDrag，onHorizontalDrag，同时使用 onPanUpdate 按压拖动回调 onPanEnd 按压拖动结束回调  |
-|  onPanCancel  | ----------  |按压拖动取消回调  |
-|  onScaleStart  | ----------  |缩放开始事件回调缩放开始，不能与 onPan ，onVerticalDrag，onHorizontalDrag，同时使用  |
-|  onScaleUpdate  | ----------  |缩放更新事件回调  |
-|  onScaleEnd  | ----------  |缩放结束事件回调  |
-|  behavior  | ----------  |手势检测器在触摸中应该如何工作  |
-|  HitTestBehavior.deferToChild: | ----------  |只有当前容器中的child被点击时才会响应点击事件  |
-|  HitTestBehavior.opaque: | ----------  |点击整个区域都会响应点击事件，但是点击事件不可穿透向下传递，注释翻译：阻止视觉上位于其后方的目标接收事件  |
-|  HitTestBehavior.translucent: | ----------  |同样是点击整个区域都会响应点击事件，和opaque的区别是点击事件是否可以向下传递，注释翻译：半透明目标既可以在其范围内接受事件，也可以允许视觉上位于其后方的目标接收事件  |
+|  onVerticalDragEnd  | ----------  | 垂直滑动结束事件回调  |
+|  onVerticalDragCancel  | ----------  | 垂直滑动取消事件回调  |
+|  onHorizontalDragDown  | ----------  | 水平滑动按下事件回调  |
+|  onHorizontalDragStart  | ----------  | 水平滑动开始事件回调  |
+|  onHorizontalDragUpdate  | ----------  | 水平滑动更新事件回调  |
+|  onHorizontalDragEnd  | ----------  | 水平滑动结束事件回调  |
+|  onHorizontalDragCancel  | ----------  | 水平滑动取消事件回调  |
+|  onPanDown  | ----------  | 按压时回调（我自己理解为点击事件，但是比onTap优先级高，onPan先执行先取消,onPan比onTap多个滑动监听）  |
+|  onPanStart  | ----------  | 按压拖动开始回调,按压开始，不能与 onScale ，onVerticalDrag，onHorizontalDrag，同时使用 onPanUpdate 按压拖动回调 onPanEnd 按压拖动结束回调  |
+|  onPanCancel  | ----------  | 按压拖动取消回调  |
+|  onScaleStart  | ----------  | 缩放开始事件回调缩放开始，不能与 onPan ，onVerticalDrag，onHorizontalDrag，同时使用  |
+|  onScaleUpdate  | ----------  | 缩放更新事件回调  |
+|  onScaleEnd  | ----------  | 缩放结束事件回调  |
+|  behavior  | ----------  | 手势检测器在触摸中应该如何工作  |
+|  HitTestBehavior.deferToChild: | ----------  | 只有当前容器中的child被点击时才会响应点击事件  |
+|  HitTestBehavior.opaque: | ----------  | 点击整个区域都会响应点击事件，但是点击事件不可穿透向下传递，注释翻译：阻止视觉上位于其后方的目标接收事件  |
+|  HitTestBehavior.translucent: | ----------  | 同样是点击整个区域都会响应点击事件，和opaque的区别是点击事件是否可以向下传递，注释翻译：半透明目标既可以在其范围内接受事件，也可以允许视觉上位于其后方的目标接收事件  |
 
 #### 一些触摸事件，监听的调用顺序
 * 点击屏幕：onPanDown--onPanCancel--onTapDown--onTapUp--onTap

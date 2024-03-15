@@ -135,40 +135,33 @@ onPanUpdate:(detail){
 
 ``` dart
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('TabBarView Demo'),
-        bottom: TabBar(
-          tabs: mTab, //设置tabbar 的标签显示内容，一般使用Tab对象,当然也可以是其他的Widget
-          controller: _tabController, //TabController对象
-          isScrollable: true, //是否可滚动
-          indicatorColor: Colors.lightBlueAccent, //指示器颜色
-          indicatorWeight: 10.0, //指示器的高度
-          indicatorPadding: EdgeInsets.all(10), //底部指示器的Padding
-          indicator: BoxDecoration(
-              border: Border.all(
-                  width: 1, color: Colors.black)), //指示器decoration，例如边框、颜色等
-          indicatorSize: TabBarIndicatorSize
-              .tab, //指示器大小计算方式,label 为以文本为边框计算，tab 为以指示器为边框计算
-          labelColor: Colors.yellowAccent, //tab 标签颜色
-          labelStyle: TextStyle(color: Colors.black, fontSize: 20), //设置标签样式
-          unselectedLabelColor: Colors.redAccent, //未选中Tab中文字颜色
-          unselectedLabelStyle:
-              TextStyle(color: Colors.red, fontSize: 25), //未选中Tab中文字style
-        ),
-        //tab 文字样式
-      ),
-      body: TabBarView(
-          children: mTabView, //一系列子控件，如果和TabBar一起使用注意和TabBar的长度一样
-          controller:
-              _tabController, //控制器，如果和TabBar一起使用注意和TabBar使用同一个controller
-          physics: ScrollPhysics()), //??
-      drawerDragStartBehavior: DragStartBehavior.start, //?
-    );
-  }
-
+ TabBar TabBar({
+  Key? key,
+  required List<Widget> tabs,    // tab组件集合，一般使用Tab对象,也可以是其他的Widget
+  TabController? controller,    //TabController对象
+  bool isScrollable = false,    //是否可滚动
+  EdgeInsetsGeometry? padding,    //设置选中Tab指示器间距，默认值为 EdgeInsets.zero
+  Color? indicatorColor,    //指示器颜色
+  bool automaticIndicatorColorAdjustment = true,    //是否自动调整indicatorColor
+  double indicatorWeight = 2.0,    //指示器高度
+  EdgeInsetsGeometry indicatorPadding = EdgeInsets.zero,  //底部指示器的Padding
+  Decoration? indicator,    //指示器decoration，例如边框等
+  TabBarIndicatorSize? indicatorSize,  //指示器大小，TabBarIndicatorSize.label 跟文字等宽,TabBarIndicatorSize.tab 跟每个tab等宽
+  Color? dividerColor,   // 分隔符颜色
+  Color? labelColor,      //选中label颜色
+  TextStyle? labelStyle,    //选中label的Style
+  EdgeInsetsGeometry? labelPadding,    //每个label的padding值
+  Color? unselectedLabelColor,    //未选中label颜色
+  TextStyle? unselectedLabelStyle,    //未选中label的Style
+  DragStartBehavior dragStartBehavior = DragStartBehavior.start,    //处理拖动开始行为的方式
+  MaterialStateProperty<Color?>? overlayColor,    //定义响应焦点、悬停和飞溅颜色
+  MouseCursor? mouseCursor,    //鼠标指针进入或悬停在鼠标指针上时的光标
+  bool? enableFeedback,    //检测到的手势是否应提供声音和/或触觉反馈
+  void Function(int)? onTap,    //单击Tab时的回调
+  ScrollPhysics? physics,    //TabBar的滚动视图如何响应用户输入
+  InteractiveInkFeatureFactory? splashFactory, // 水波纹效果
+  BorderRadius? splashBorderRadius,  // 水波纹Radius
+})
 ```
 
 #### CupertinoDatePicker 
@@ -218,4 +211,122 @@ CupertinoTimerPicker(
   },
 );
 
+```
+
+#### Icon 使用
+
+| 字段 | 属性 | 说明 |
+| ---- | ---- | ---- |
+|  IconData |icon	| icon数据，可使用Icons.home方式获取，也可以使用IconData(0xe577, fontFamily: ‘MaterialIcons’) |
+|  double |size	| 图标大小，默认24.0 |
+|  Color |color	| 图标颜色 |
+|  String |semanticLabel	| 语义标签 |
+|  TextDirection |textDirection	| 图标的文本方向 |
+
+### 用户滚动操作
+
+```dart
+  AlwaysScrollableScrollPhysics：总是可以滑动
+  NeverScrollableScrollPhysics：禁止滚动
+  BouncingScrollPhysics ：内容超过一屏 上拉有回弹效果
+  ClampingScrollPhysics ：包裹内容 不会有回弹
+```
+
+#### NestedScrollView widget
+NestedScrollView：支持嵌套滑动的ScrollView；
+| 属性  |  说明  | 默认值 |
+| ----- | ----- | ----- |
+|  controller |	滚动监听 |	无 |
+|  scrollDirection |	滚动方向 |	Axis.vertical 默认垂直方向 |
+|  reverse |	是都倒叙 |	false 默认值 |
+|  physics |	控制用户滚动视图的交互 | `AlwaysScrollableScrollPhysics,总是可以滑动。` `NeverScrollableScrollPhysics,禁止滚动。` `BouncingScrollPhysics，内容超过一屏上拉有回弹效果。`, `ClampingScrollPhysics，包裹内容不会有回弹。` |
+|  headerSliverBuilder |	折叠头部 |	无 |
+|  body |	滚动组件实体 |	无 |
+
+NestedScrollView折叠部分使用SliverAppBar来实现
+
+NestedScrollView 进行吸顶效果, body 被覆盖，无法预计顶部head的高度？
+
+![NestedScrollView](/Flutter/widget/NestedScrollView.webp)
+
+所以我们使用“SliverOverlapAbsorber+ SliverOverlapInjector”来解决问题
+#### SliverAppBar 使用
+
+```dart
+
+NestedScrollView(
+    controller: _scrollController,
+    headerSliverBuilder: _headerSliverBuilder,
+    body: buildSliverBody(context)
+)
+///页面滚动头部处理
+List<Widget> _headerSliverBuilder(BuildContext context, bool innerBoxIsScrolled) {
+  return <Widget> [
+    buildSliverAppBar(context)
+  ];
+}
+///导航部分渲染
+Widget buildSliverAppBar(BuildContext context) {
+  return SliverAppBar(
+    //当此值为true时 SliverAppBar 会固定在页面顶部
+    //当此值为fase时 SliverAppBar 会随着滑动向上滑动
+    pinned: true,
+    //滚动是是否拉伸图片
+    stretch: true,
+    //展开区域的高度
+    expandedHeight: 500,
+    //当snap配置为true时，向下滑动页面，SliverAppBar（以及其中配置的flexibleSpace内容）会立即显示出来，
+    //反之当snap配置为false时，向下滑动时，只有当ListView的数据滑动到顶部时，SliverAppBar才会下拉显示出来。
+    snap: false,
+    //阴影
+    elevation: 0,
+    //背景颜色
+    backgroundColor: headerWhite? Colors.white : Color(0xFFF4F5F7),
+    //App bar 的亮度，有白色和黑色两种主题，默认值为 ThemeData.primaryColorBrightness
+    brightness: Brightness.light,
+    //在标题左侧显示的一个控件，在首页通常显示应用的 logo；在其他界面通常显示为返回按钮
+    leading: IconButton(
+        icon: Image.network(backIcon, height: 22, width: 22,),
+        onPressed: (){
+          //TODO: 返回事件处理
+        }
+    ),
+		//一个显示在 AppBar 下方的控件，高度和 AppBar 高度一样， // 可以实现一些特殊的效果，该属性通常在 SliverAppBar 中使用
+    flexibleSpace: FlexibleSpaceBar(
+      title: headerWhite ? Text('长津湖', style: TextStyle(
+          color: Color(0xFF333333),
+          fontWeight: FontWeight.w700,
+          fontSize: 17,
+          fontFamily: 'PingFangSC-Semibold'
+      ),) : Text(''),
+      //标题居中
+      centerTitle: true,
+      background: buildAppBarBackground(context),
+    ),
+  );
+}
+
+
+const SliverAppBar({
+  Key key,
+  this.leading,         //在标题左侧显示的一个控件，在首页通常显示应用的 logo；在其他界面通常显示为返回按钮
+  this.automaticallyImplyLeading = true,//? 控制是否应该尝试暗示前导小部件为null
+  this.title,               //当前界面的标题文字
+  this.actions,          //一个 Widget 列表，代表 Toolbar 中所显示的菜单，对于常用的菜单，通常使用 IconButton 来表示；对于不常用的菜单通常使用 PopupMenuButton 来显示为三个点，点击后弹出二级菜单
+  this.flexibleSpace,        //一个显示在 AppBar 下方的控件，高度和 AppBar 高度一样， // 可以实现一些特殊的效果，该属性通常在 SliverAppBar 中使用
+  this.bottom,         //一个 AppBarBottomWidget 对象，通常是 TabBar。用来在 Toolbar 标题下面显示一个 Tab 导航栏
+  this.elevation,            //阴影
+  this.forceElevated = false, 
+  this.backgroundColor,       //APP bar 的颜色，默认值为 ThemeData.primaryColor。改值通常和下面的三个属性一起使用
+  this.brightness,   //App bar 的亮度，有白色和黑色两种主题，默认值为 ThemeData.primaryColorBrightness
+  this.iconTheme,  //App bar 上图标的颜色、透明度、和尺寸信息。默认值为 ThemeData().primaryIconTheme
+  this.textTheme,    //App bar 上的文字主题。默认值为 ThemeData（）.primaryTextTheme
+  this.primary = true,  //此应用栏是否显示在屏幕顶部
+  this.centerTitle,     //标题是否居中显示，默认值根据不同的操作系统，显示方式不一样,true居中 false居左
+  this.titleSpacing = NavigationToolbar.kMiddleSpacing,//横轴上标题内容 周围的间距
+  this.expandedHeight,     //展开高度
+  this.floating = false,       //是否随着滑动隐藏标题
+  this.pinned = false,  //是否固定在顶部
+  this.snap = false,   //与floating结合使用
+})
 ```

@@ -16,12 +16,12 @@ export const docsConfig = {
         //     link: "/zh-CN", // index 直接跳转到首页
         //     ...zhCNConfig,
         // },
-        "en-US": {
-            label: "English",
-            lang: "en-US",
-            link: "/en-US",
-            ...enUSConfig,
-        },
+        // "en-US": {
+        //     label: "English",
+        //     lang: "en-US",
+        //     link: "/en-US",
+        //     ...enUSConfig,
+        // },
     },
 };
 

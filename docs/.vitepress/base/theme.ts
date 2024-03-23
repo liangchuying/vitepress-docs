@@ -2,10 +2,12 @@ import type { DefaultTheme } from "vitepress";
 
 export const themeConfig: DefaultTheme.Config = {
     // https://vitepress.dev/reference/default-theme-config
-    footer: {
-        message: "Released under the MIT License.",
-        copyright: "Copyright © 2023-present Liud",
-    },
+
+    // footer: { // 页脚显示
+    //     message: "Released under the MIT License.",
+    //     copyright: "Copyright © 2023-present Liud",
+    // },
+
     // logo
     logo: "/vitepress-logo-mini.png",
     // logo: "https://vuejs.org/images/logo.png",

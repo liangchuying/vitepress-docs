@@ -5,6 +5,9 @@
 flutter devices 查看设备列表
 flutter doctor 查看当前配置粗略情况
 flutter upgrade 升级flutter
+
+flutter packages upgrade”命令，这将自动更新所有依赖项到最新版本。
+
 flutter build apk/ios 打包项目，生成可安装文件
 flutter packages get/upgrade 获取或升级依赖
 flutter analyze 使用分析器检查代码是否存在问题

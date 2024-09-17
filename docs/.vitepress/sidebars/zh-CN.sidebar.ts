@@ -119,6 +119,10 @@ export const getZhCNSidebar: () => DefaultTheme.Sidebar = () => {
                         text: "其他",
                         link: "/zh-CN/flutter/other.md",
                     },
+                    {
+                        text: "组件封装",
+                        link: "/zh-CN/flutter/custom_widget.md",
+                    },
                 ],
             }
         ],

@@ -65,6 +65,10 @@ export const getZhCNSidebar: () => DefaultTheme.Sidebar = () => {
                         text: "常用函数",
                         link: "/zh-CN/javascript/shared.md",
                     },
+                    {
+                        text: "window file systeam api",
+                        link: "/zh-CN/javascript/window file system api.md",
+                    },
                 ],
             }
         ],
